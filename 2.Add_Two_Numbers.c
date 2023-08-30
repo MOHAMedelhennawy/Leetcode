@@ -51,6 +51,7 @@ ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2){
 		l1 = l1->next;
 		l2 = l2->next;
 	}
+	/*int case l1 is longest*/
 	while (l1)
 	{
 		sum = l1->val + carry;
@@ -58,6 +59,7 @@ ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2){
 		Creat_node_at_end(&head3, sum % 10);
 		l1 = l1->next;
 	}
+	/*in case l2 is longest*/
 	while (l2)
 	{
 		sum = l2->val + carry;
@@ -65,6 +67,7 @@ ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2){
 		Creat_node_at_end(&head3, sum % 10);
 		l2 = l2->next;
 	}
+	/*if carry has a number and not stored yet*/
 	if (carry)
 		Creat_node_at_end(&head3, carry);
     
